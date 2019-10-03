@@ -3,7 +3,9 @@ package com.avactis.alg.qa.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage {
+import com.avactis.alg.qa.base.ProjectBase;
+
+public class LoginPage extends ProjectBase {
 	
 	@FindBy (xpath = "//a[contains(text(), 'Sign In')]")
 	WebElement signIn;
@@ -19,5 +21,9 @@ public class LoginPage {
 	
 	@FindBy (xpath ="//input[@type='submit']")
 	WebElement btnSubmit;
+	
+	public LoginPage() {
+		
+	}
 
 }
