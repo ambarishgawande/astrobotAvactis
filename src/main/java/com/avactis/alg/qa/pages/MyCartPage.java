@@ -1,5 +1,7 @@
 package com.avactis.alg.qa.pages;
 
-public class MyCartPage {
+import com.avactis.alg.qa.base.ProjectBase;
+
+public class MyCartPage extends ProjectBase {
 
 }

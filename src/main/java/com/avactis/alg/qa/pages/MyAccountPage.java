@@ -1,5 +1,7 @@
 package com.avactis.alg.qa.pages;
 
-public class MyAccountPage {
+import com.avactis.alg.qa.base.ProjectBase;
+
+public class MyAccountPage extends ProjectBase {
 
 }

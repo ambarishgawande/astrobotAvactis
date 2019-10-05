@@ -1,5 +1,7 @@
 package com.avactis.alg.qa.pages;
 
-public class ComputersPage {
+import com.avactis.alg.qa.base.ProjectBase;
+
+public class ComputersPage extends ProjectBase {
 
 }

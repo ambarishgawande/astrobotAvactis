@@ -1,5 +1,7 @@
 package com.avactis.alg.qa.pages;
 
-public class DvdPage {
+import com.avactis.alg.qa.base.ProjectBase;
+
+public class DvdPage extends ProjectBase {
 
 }

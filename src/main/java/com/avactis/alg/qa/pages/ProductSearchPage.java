@@ -1,5 +1,7 @@
 package com.avactis.alg.qa.pages;
 
-public class ProductSearchPage {
+import com.avactis.alg.qa.base.ProjectBase;
+
+public class ProductSearchPage extends ProjectBase {
 
 }

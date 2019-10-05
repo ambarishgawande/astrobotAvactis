@@ -1,5 +1,7 @@
 package com.avactis.alg.qa.pages;
 
-public class CheckOutPage {
+import com.avactis.alg.qa.base.ProjectBase;
+
+public class CheckOutPage extends ProjectBase {
 
 }

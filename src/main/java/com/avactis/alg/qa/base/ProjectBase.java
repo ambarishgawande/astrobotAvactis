@@ -31,12 +31,13 @@ public class ProjectBase {
 		}
 	}
 	
-	public static void initBrowser() {
+	public static void initializationOfBrowser() {
 		
 		if (prop.getProperty("browser").equals("chrome") ) {
 			System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver_ver77.exe");
 			driver = new ChromeDriver();
-		} else if (prop.getProperty("browser").equals("FirFox") ) {
+		}
+		else if (prop.getProperty("browser").equals("FirFox") ) {
 			System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\geckodriver-64bit.exe");
 			driver = new FirefoxDriver();
 		}

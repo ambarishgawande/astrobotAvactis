@@ -1,5 +1,7 @@
 package com.avactis.alg.qa.pages;
 
-public class DigitalDistributionPage {
+import com.avactis.alg.qa.base.ProjectBase;
+
+public class DigitalDistributionPage extends ProjectBase {
 
 }
