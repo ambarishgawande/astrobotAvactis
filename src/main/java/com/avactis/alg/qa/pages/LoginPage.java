@@ -20,7 +20,7 @@ public class LoginPage extends ProjectBase {
 	
 	// Remember Me Check Box
 	@FindBy (xpath = "//input[@name='remember_me']")
-	WebElement checkBoxRemeberMe;			//alternet xPath : "//input[@value='save']"
+	WebElement checkBoxRememberMe;			//alternet xPath : "//input[@value='save']"
 	
 	// Submit button
 	@FindBy (xpath ="//input[@type='submit']")
@@ -51,7 +51,9 @@ public class LoginPage extends ProjectBase {
 		inputUserPassword.clear();
 		inputUserPassword.sendKeys(pwd);
 		
-		//checkBoxRemeberMe.clear();
+		if (checkBoxRememberMe.isSelected() ) {
+			checkBoxRememberMe.click();
+		}
 		
 		btnSubmit.click();
 		
