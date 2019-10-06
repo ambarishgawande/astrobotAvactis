@@ -2,28 +2,59 @@ package com.avactis.alg.qa.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.avactis.alg.qa.base.ProjectBase;
 
 public class LoginPage extends ProjectBase {
 	
-	@FindBy (xpath = "//a[contains(text(), 'Sign In')]")
-	WebElement signIn;
+	// Page Factory or OB (Object repository)
 	
-	@FindBy (xpath = "//input[@id='account_sign_in_form_email_id']")
-	WebElement inputEmail;
+	// UserName
+	@FindBy (xpath = "//input[@id='sign_in_box_email']")
+	WebElement inputUserName;
 	
-	@FindBy (xpath = "//input[@id='account_sign_in_form_passwd_id']")
-	WebElement inputPassword;
+	// Password
+	@FindBy (xpath = "//input[@id='sign_in_box_password']")
+	WebElement inputUserPassword;
 	
+	// Remember Me Check Box
 	@FindBy (xpath = "//input[@name='remember_me']")
-	WebElement checkBoxRemeberMe;
+	WebElement checkBoxRemeberMe;			//alternet xPath : "//input[@value='save']"
 	
+	// Submit button
 	@FindBy (xpath ="//input[@type='submit']")
 	WebElement btnSubmit;
 	
+	// Avactis Logo
+	@FindBy (xpath = "//a[@class='site-logo']")
+	WebElement avactisLogo;
+	
+	// Initializing the Page Object
 	public LoginPage() {
-		
+		PageFactory.initElements(driver, this);
+	}
+	
+	// Actions :
+	public String validateLoginPageTitle() {
+		return driver.getTitle();
+	}
+	
+	public boolean validateAvactisLogo() {
+		return avactisLogo.isDisplayed();
 	}
 
+	public HomePage login(String un, String pwd) {
+		inputUserName.clear();
+		inputUserName.sendKeys(un);
+		
+		inputUserPassword.clear();
+		inputUserPassword.sendKeys(pwd);
+		
+		//checkBoxRemeberMe.clear();
+		
+		btnSubmit.click();
+		
+		return new HomePage();
+	}
 }

@@ -14,8 +14,9 @@ import com.avactis.alg.qa.util.TestUtil;
 
 public class ProjectBase {
 	
-	static WebDriver driver;
-	static Properties prop;
+	public static WebDriver driver;
+	public static Properties prop;
+	
 	static String configPath = "src\\main\\java\\com\\avactis\\alg\\qa\\config\\config.properties";
 //	static String configPath = "C:\\Users\\AstrobotHP\\eclipse-workspace\\avactis\\src\\main\\java\\com\\avactis\\alg\\qa\\config\\config.properties";
 	
