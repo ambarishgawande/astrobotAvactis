@@ -9,6 +9,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.avactis.alg.qa.util.TestUtil;
 
@@ -16,6 +18,8 @@ public class ProjectBase {
 	
 	public static WebDriver driver;
 	public static Properties prop;
+	public static WebDriverWait wait;
+	public static Actions action;
 	
 	static String configPath = "src\\main\\java\\com\\avactis\\alg\\qa\\config\\config.properties";
 //	static String configPath = "C:\\Users\\AstrobotHP\\eclipse-workspace\\avactis\\src\\main\\java\\com\\avactis\\alg\\qa\\config\\config.properties";
@@ -32,7 +36,7 @@ public class ProjectBase {
 		}
 	}
 	
-	public static void initializationOfBrowser() {
+	public static void initializationOfBrowser(String name) {
 		
 		if (prop.getProperty("browser").equals("chrome") ) {
 			System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver_ver77.exe");
@@ -49,7 +53,16 @@ public class ProjectBase {
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		
-		driver.get(prop.getProperty("url"));
+		wait = new WebDriverWait(driver, 30);
+		action = new Actions(driver);
+		
+		if (name.equals("GoToAdminPage")) {
+			driver.get(prop.getProperty("adminUrl"));
+		}
+		else {		// name = GoToUserPage
+			driver.get(prop.getProperty("userUrl"));
+		}
+		
 	}
 
 }
