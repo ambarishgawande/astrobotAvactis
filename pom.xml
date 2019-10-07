@@ -107,7 +107,7 @@
           <version>2.22.1</version>
            <configuration>
          <suiteXmlFiles>
-           <suiteXmlFile>C:\Selenium\Training Workspace\seleniumcoaching\src\test\java\testng.xml</suiteXmlFile>
+           <suiteXmlFile>C:\Users\AstrobotHP\eclipse-workspace\avactis\testngsuite.xml</suiteXmlFile>
          </suiteXmlFiles>
         </configuration>
         </plugin>        

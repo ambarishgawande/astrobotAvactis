@@ -37,13 +37,13 @@ public class LoginPageTest extends ProjectBase {
   
   
   @BeforeClass
-  public void beforeMethod() {
+  public void beforeClass() {
 	  initializationOfBrowser("GoToUserPage");
 	  loginPage = new LoginPage();
   }
 
   @AfterClass
-  public void afterMethod() {
+  public void afterClass() {
 //	  driver.quit();
   }
 

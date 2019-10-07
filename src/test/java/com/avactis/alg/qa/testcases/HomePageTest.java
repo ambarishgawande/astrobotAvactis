@@ -38,14 +38,9 @@ public class HomePageTest extends ProjectBase {
 	  Assert.assertTrue(homePage.verifyUserName(), "User Name not match");
   }
   
-  
-  
-  
   @BeforeClass
   public void beforeClass() {
-	  initializationOfBrowser("GoToUserPage");
-	  loginPage = new LoginPage();
-	  homePage = loginPage.login(prop.getProperty("userName"), prop.getProperty("userPassword"));
+	  homePage = new HomePage();
 	  
   }
 
