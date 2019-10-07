@@ -6,10 +6,8 @@ import com.avactis.alg.qa.base.ProjectBase;
 import com.avactis.alg.qa.pages.HomePage;
 import com.avactis.alg.qa.pages.LoginPage;
 
-import org.testng.annotations.BeforeMethod;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
 public class LoginPageTest extends ProjectBase {
@@ -23,7 +21,7 @@ public class LoginPageTest extends ProjectBase {
 	
   @Test(priority=1)
   public void loginPageTitleTest() {
-	  Assert.assertEquals(loginPage.validateLoginPageTitle(), "Avactis Demo Store");
+	  Assert.assertEquals(loginPage.validateLoginPageTitle(), "Avactis Demo Store", "Login page title not match");
   }
   
   @Test(priority=2)
@@ -40,7 +38,7 @@ public class LoginPageTest extends ProjectBase {
   
   @BeforeClass
   public void beforeMethod() {
-	  initializationOfBrowser();
+	  initializationOfBrowser("GoToUserPage");
 	  loginPage = new LoginPage();
   }
 
