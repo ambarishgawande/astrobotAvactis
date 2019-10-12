@@ -30,12 +30,18 @@ public class HomePageTest extends ProjectBase {
   
   @Test(priority=2)
   public void verifyWelcomeTextTest() {
-	  Assert.assertTrue(homePage.verifyWelcomeText(), "Welcome text not match");
+//	  Assert.assertTrue(homePage.verifyWelcomeText(), "Welcome text not match");
+//	  Assert.assertFalse(homePage.verifyWelcomeText(), "Welcome text not match");
   }
   
   @Test(priority=3)
   public void verifyUserNameTest() {
 	  Assert.assertTrue(homePage.verifyUserName(), "User Name not match");
+  }
+  
+  @Test(priority=4)
+  public void goToapparelPage() {
+	  homePage.clickOnApparelLink();
   }
   
   @BeforeClass
@@ -46,7 +52,7 @@ public class HomePageTest extends ProjectBase {
 
   @AfterClass
   public void afterClass() {
-	  driver.quit();
+//	  driver.quit();
   }
 
 }

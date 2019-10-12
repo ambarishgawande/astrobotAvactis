@@ -16,7 +16,14 @@ public class HomePage extends ProjectBase {
 	WebElement usernameText;
 	
 	@FindBy (xpath = "//div[@class='header-navigation']//a[contains(text(), 'Apparel')]")
-	WebElement apparelLink;
+	WebElement apparelLinkTop;
+	
+	@FindBy (xpath = "//a[text()='Apparel']//i[@class='cat_space']")
+	WebElement apparelLinkLeft;
+	
+	@FindBy (xpath = "//h3//a[text()='Apparel']")
+	WebElement apparelLinkMain;
+	
 	
 	// Initializing the Page Object
 	public HomePage() {
@@ -37,7 +44,8 @@ public class HomePage extends ProjectBase {
 	}
 	
 	public ApparelPage clickOnApparelLink() {
-		apparelLink.click();
+//		apparelLink.click();
+		apparelLinkMain.click();
 		
 		return new ApparelPage();
 	}
