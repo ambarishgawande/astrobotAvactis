@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" verbose="10">
-  <test name="Test">
+<suite name="Avactis Application Test Automation Test Suite">
+  <test name="Avactis App Test case">
     <classes>
-      <class name="com.avactis.alg.qa.testcases.LoginPageTest"/>
-      <class name="com.avactis.alg.qa.testcases.HomePageTest"/>
+      <class name="com.avactis.alg.qa.testcases.LoginPageTest"></class>
+      <class name="com.avactis.alg.qa.testcases.HomePageTest"></class>
       
       
     </classes>
