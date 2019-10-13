@@ -11,8 +11,8 @@ import org.testng.annotations.BeforeClass;
 
 public class ApparelPageTest extends ProjectBase {
 	
-//	LoginPage loginPage;
-//	HomePage homePage;
+	LoginPage loginPage;
+	HomePage homePage;
 	ApparelPage apparelPage;
 	
 	public ApparelPageTest() {
@@ -27,17 +27,17 @@ public class ApparelPageTest extends ProjectBase {
 	  Assert.assertEquals(apparelPage.verifyApparelPageTitle(), "Apparel - Avactis Demo Store");
   }
   
-  @BeforeClass
-  public void beforeClass() {
+  @BeforeMethod
+  public void beforeMethod() {
 	  initializationOfBrowser("GoToUserPage");
-//	  loginPage = new LoginPage();
-//	  homePage = new HomePage();
+	  loginPage = new LoginPage();
+	  homePage = new HomePage();
 	  apparelPage = new ApparelPage();
 	  
   }
   
-  @AfterClass
-  public void afterClass() {
+  @AfterMethod
+  public void afterMethod() {
 	  driver.quit();
   }
 
