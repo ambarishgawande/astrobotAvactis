@@ -5,6 +5,7 @@
     <classes>
       <class name="com.avactis.alg.qa.testcases.LoginPageTest"></class>
       <class name="com.avactis.alg.qa.testcases.HomePageTest"></class>
+      <class name="com.avactis.alg.qa.testcases.ApparelPageTest"></class>
       
       
     </classes>

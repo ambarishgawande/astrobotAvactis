@@ -1,5 +1,7 @@
 package com.avactis.alg.qa.pages;
 
-public class ApparelAvactisTshirtPage {
+import com.avactis.alg.qa.base.ProjectBase;
+
+public class ApparelAvactisTshirtPage extends ProjectBase {
 
 }

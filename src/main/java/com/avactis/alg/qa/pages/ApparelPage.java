@@ -43,7 +43,7 @@ public class ApparelPage extends ProjectBase {
 		return bestSellersHeading.isDisplayed();
 	}
 	
-	public ApparelCustomTshirtPage selectCustomApparel() {
+	public ApparelCustomTshirtPage clickOnCustomApparelLink() {
 		customTshirtLink.click();
 		return new ApparelCustomTshirtPage();
 	}
