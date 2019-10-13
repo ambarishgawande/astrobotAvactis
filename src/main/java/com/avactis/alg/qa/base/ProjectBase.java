@@ -56,12 +56,9 @@ public class ProjectBase {
 		wait = new WebDriverWait(driver, 30);
 		action = new Actions(driver);
 		
-		if (name.equals("GoToAdminPage")) {
-			driver.get(prop.getProperty("adminUrl"));
-		}
-		else {		// name = GoToUserPage
-			driver.get(prop.getProperty("userUrl"));
-		}
+		// if name = "userUrl" then goto user page
+		// if name = "adminUrl" then goto admin page
+		driver.get(prop.getProperty(name));
 		
 	}
 

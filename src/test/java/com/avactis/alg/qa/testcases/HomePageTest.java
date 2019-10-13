@@ -7,10 +7,9 @@ import com.avactis.alg.qa.pages.ApparelPage;
 import com.avactis.alg.qa.pages.HomePage;
 import com.avactis.alg.qa.pages.LoginPage;
 
-import org.testng.annotations.BeforeClass;
-
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 public class HomePageTest extends ProjectBase {
 	
@@ -22,37 +21,42 @@ public class HomePageTest extends ProjectBase {
 		super();
 	}
 	
-  @Test(priority=1)
+  @Test(priority=4)
   public void verifyHomePageTitleTest() {
 	  
 	  Assert.assertEquals(homePage.verifyHomePageTitle(), "Avactis Demo Store", "Home page title not match");
   }
   
-  @Test(priority=2)
+  @Test(priority=5)
   public void verifyWelcomeTextTest() {
-//	  Assert.assertTrue(homePage.verifyWelcomeText(), "Welcome text not match");
+	  Assert.assertTrue(homePage.verifyWelcomeText(), "Welcome text not match");
 //	  Assert.assertFalse(homePage.verifyWelcomeText(), "Welcome text not match");
   }
   
-  @Test(priority=3)
+  @Test(priority=6)
   public void verifyUserNameTest() {
 	  Assert.assertTrue(homePage.verifyUserName(), "User Name not match");
   }
   
-  @Test(priority=4)
+  @Test(priority=7)
   public void goToapparelPage() {
-	  homePage.clickOnApparelLink();
+	  apparelPage = new ApparelPage();
+	  apparelPage = homePage.clickOnApparelLink();
   }
   
   @BeforeClass
   public void beforeClass() {
+	  initializationOfBrowser("userUrl");
+	  loginPage = new LoginPage();
 	  homePage = new HomePage();
+	  
+	  homePage = loginPage.login(prop.getProperty("userName"), prop.getProperty("userPassword"));
 	  
   }
 
   @AfterClass
   public void afterClass() {
-//	  driver.quit();
+	  driver.quit();
   }
 
 }

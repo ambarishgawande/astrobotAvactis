@@ -38,13 +38,15 @@ public class LoginPageTest extends ProjectBase {
   
   @BeforeClass
   public void beforeClass() {
-	  initializationOfBrowser("GoToUserPage");
+	  initializationOfBrowser("userUrl");
+//	  initializationOfBrowser("adminUrl");	// if you want to login as admin
 	  loginPage = new LoginPage();
+	  homePage = new HomePage();
   }
 
   @AfterClass
   public void afterClass() {
-//	  driver.quit();
+	  driver.quit();
   }
 
 }
