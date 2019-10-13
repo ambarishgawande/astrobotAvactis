@@ -9,7 +9,9 @@ import com.avactis.alg.qa.pages.LoginPage;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 public class HomePageTest extends ProjectBase {
 	
@@ -21,31 +23,31 @@ public class HomePageTest extends ProjectBase {
 		super();
 	}
 	
-  @Test(priority=4)
+  @Test(priority=1)
   public void verifyHomePageTitleTest() {
 	  
 	  Assert.assertEquals(homePage.verifyHomePageTitle(), "Avactis Demo Store", "Home page title not match");
   }
   
-  @Test(priority=5)
+  @Test(priority=2)
   public void verifyWelcomeTextTest() {
 	  Assert.assertTrue(homePage.verifyWelcomeText(), "Welcome text not match");
 //	  Assert.assertFalse(homePage.verifyWelcomeText(), "Welcome text not match");
   }
   
-  @Test(priority=6)
+  @Test(priority=3)
   public void verifyUserNameTest() {
 	  Assert.assertTrue(homePage.verifyUserName(), "User Name not match");
   }
   
-  @Test(priority=7)
+  @Test(priority=4)
   public void goToapparelPage() {
 	  apparelPage = new ApparelPage();
 	  apparelPage = homePage.clickOnApparelLink();
   }
   
-  @BeforeClass
-  public void beforeClass() {
+  @BeforeMethod
+  public void beforeMethod() {
 	  initializationOfBrowser("userUrl");
 	  loginPage = new LoginPage();
 	  homePage = new HomePage();
@@ -54,8 +56,8 @@ public class HomePageTest extends ProjectBase {
 	  
   }
 
-  @AfterClass
-  public void afterClass() {
+  @AfterMethod
+  public void afterMethod() {
 	  driver.quit();
   }
 

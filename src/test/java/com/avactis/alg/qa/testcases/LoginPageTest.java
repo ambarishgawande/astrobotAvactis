@@ -8,7 +8,9 @@ import com.avactis.alg.qa.pages.LoginPage;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 public class LoginPageTest extends ProjectBase {
 	
@@ -36,16 +38,16 @@ public class LoginPageTest extends ProjectBase {
   }
   
   
-  @BeforeClass
-  public void beforeClass() {
+  @BeforeMethod
+  public void beforeMethod() {
 	  initializationOfBrowser("userUrl");
 //	  initializationOfBrowser("adminUrl");	// if you want to login as admin
 	  loginPage = new LoginPage();
 	  homePage = new HomePage();
   }
 
-  @AfterClass
-  public void afterClass() {
+  @AfterMethod
+  public void afterMethod() {
 	  driver.quit();
   }
 
