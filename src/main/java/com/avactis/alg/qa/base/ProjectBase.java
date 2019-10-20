@@ -36,7 +36,7 @@ public class ProjectBase {
 		}
 	}
 	
-	public static void initializationOfBrowser(String name) {
+	public static void initializationOfBrowser(String page) {
 		
 		if (prop.getProperty("browser").equals("chrome") ) {
 			System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver_ver77.exe");
@@ -56,9 +56,9 @@ public class ProjectBase {
 		wait = new WebDriverWait(driver, 30);
 		action = new Actions(driver);
 		
-		// if name = "userUrl" then goto user page
-		// if name = "adminUrl" then goto admin page
-		driver.get(prop.getProperty(name));
+		// if page = "userUrl" then goto user page
+		// if page = "adminUrl" then goto admin page
+		driver.get(prop.getProperty(page));
 		
 	}
 
