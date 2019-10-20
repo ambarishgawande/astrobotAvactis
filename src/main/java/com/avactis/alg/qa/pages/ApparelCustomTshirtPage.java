@@ -1,5 +1,6 @@
 package com.avactis.alg.qa.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,7 +16,13 @@ public class ApparelCustomTshirtPage extends ProjectBase {
 	WebElement CustomTshirtCost;
 	
 	@FindBy (xpath = "//input[@name='po[19]']")
-	WebElement CustomTshirtChooseFileBtn;
+	WebElement clickOnCustomTshirtChooseFileBtn;
+	
+	@FindBy (xpath = "//textarea[@name='po[20][val]']")
+	WebElement commentOnTshirtText;
+	
+	@FindBy (xpath = "//input[@type='submit' and @value='Add To Cart']")
+	WebElement clickOnCustomTshirtAddToCard;
 
 	// Initializing the Page Object
 
@@ -37,7 +44,26 @@ public class ApparelCustomTshirtPage extends ProjectBase {
 	}
 	
 	public boolean uploadDesginFile(String path, String fileName) {
-		CustomTshirtChooseFileBtn.sendKeys(path+fileName);
+		clickOnCustomTshirtChooseFileBtn.sendKeys(path+fileName);
 		return true;
 	}
+	
+	public void selectSize(String val) {
+		driver.findElement(By.xpath("//select[@name='po[18]']//option[@value='"+val+"']")).click();
+	}
+	
+	public void enterCommentText(String val) {
+		commentOnTshirtText.clear();
+		commentOnTshirtText.sendKeys(val);
+	}
+	
+	public void setQuantity(String qty) {
+		driver.findElement(By.xpath("//select[@name='quantity_in_cart']//option[@value='"+qty+"']")).click();
+	}
+	
+	public void AddCustomTshirtToCard() {
+		clickOnCustomTshirtAddToCard.click();
+	}
+	
+//	public String get
 }
