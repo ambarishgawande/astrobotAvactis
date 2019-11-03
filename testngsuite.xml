@@ -3,12 +3,11 @@
 <suite name="Avactis Application Test Automation Test Suite">
   <test name="Avactis App Test case">
     <classes>
-      <class name="com.avactis.alg.qa.testcasesPurchaseTest."></class>
-      <class name="com.avactis.alg.qa.testcases.LoginPageTest"></class>
-      <class name="com.avactis.alg.qa.testcases.HomePageTest"></class>
-      <class name="com.avactis.alg.qa.testcases.ApparelPageTest"></class>
+      <!-- <class name="com.avactis.alg.qa.testcasesPurchaseTest."></class>  -->
+      <!-- <class name="com.avactis.alg.qa.testcases.LoginPageTest"></class>  -->
+      <!-- <class name="com.avactis.alg.qa.testcases.HomePageTest"></class>  -->
+      <!-- <class name="com.avactis.alg.qa.testcases.ApparelPageTest"></class>  -->
       <class name="com.avactis.alg.qa.testcases.ApparelPurchaseTest"></class>
-      
       
     </classes>
   </test> <!-- Test -->

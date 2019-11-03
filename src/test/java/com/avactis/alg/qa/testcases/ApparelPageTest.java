@@ -32,7 +32,7 @@ public class ApparelPageTest extends ProjectBase {
 	  apparelCustomTshirtPage = new ApparelCustomTshirtPage();
 	  
 	  homePage = loginPage.login(prop.getProperty("userName"), prop.getProperty("userPassword"));
-	  apparelPage = homePage.clickOnApparelLink();
+	  apparelPage = homePage.clickOnApparelLink();			// click on Apparel Link
   }
   
   

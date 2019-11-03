@@ -10,5 +10,9 @@ public class TestUtil extends ProjectBase {
 	public void switchToFrame(String frameName) {
 		driver.switchTo().frame(frameName);
 	}
+	
+	public static String getCurrentPageTitle() {
+		return ( driver.getTitle() );
+	}
 
 }
