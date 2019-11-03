@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.avactis.alg.qa.base.ProjectBase;
 
@@ -94,6 +95,8 @@ public class ApparelCustomTshirtPage extends ProjectBase {
 	public void clickAddToCard() {
 		clickOnCustomTshirtAddToCard.click();
 	}
-
-	// public String get
+	
+	public void waitTillItemAdded() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ajax_message_box_text']//h2")));
+	}
 }

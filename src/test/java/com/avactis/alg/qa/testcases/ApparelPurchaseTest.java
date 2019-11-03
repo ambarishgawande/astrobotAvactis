@@ -63,13 +63,14 @@ public class ApparelPurchaseTest extends ProjectBase {
 		apparelCustomTshirtPage.enterCommentText("Ambarish : World of Test - Automation");
 		apparelCustomTshirtPage.setQuantity("2");
 		apparelCustomTshirtPage.clickAddToCard();
+		apparelCustomTshirtPage.waitTillItemAdded();
 	}
 
 	@AfterTest
 	public void afterTest() {
-//		Assert.assertEquals(homePage.getCardInfoCount(), "1 items", "Item count in card is not equals to 1");
-//		Assert.assertEquals(homePage.getCardInfoValue(), "$25.99", "Cost of item in card is not equals to $25.99");
-//		driver.quit();
+		Assert.assertEquals(homePage.getCardInfoCount(), "2 items", "Item count in card is not equals to 1");
+		Assert.assertEquals(homePage.getCardInfoValue(), "$51.98", "Cost of item in card is not equals to $51.98");
+		driver.quit();
 	}
 
 }
