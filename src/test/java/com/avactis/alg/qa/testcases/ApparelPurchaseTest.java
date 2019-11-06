@@ -1,5 +1,6 @@
 package com.avactis.alg.qa.testcases;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -59,6 +60,7 @@ public class ApparelPurchaseTest extends ProjectBase {
 				"Custom T-Shirt page title not match");
 		
 		apparelCustomTshirtPage.clickOnChooseFile("C:\\Users\\AstrobotHP\\Pictures\\", "ambarish.jpg");
+		Assert.assertTrue(driver.findElement(By.xpath("//input[@name='po[19]']")).getAttribute("value").contains("ambarish.jpg"));
 		apparelCustomTshirtPage.selectSize("S");
 		apparelCustomTshirtPage.enterCommentText("Ambarish : World of Test - Automation");
 		apparelCustomTshirtPage.setQuantity("2");
